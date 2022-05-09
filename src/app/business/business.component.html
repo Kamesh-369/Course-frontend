@@ -1,0 +1,73 @@
+<p>business works!</p>
+<!-- <ul>
+    <li *ngFor="let course of category">
+        <ul>
+            <li><h1></h1></li>
+            <li>{{course.courseName}}</li>
+        </ul>
+        
+    </li>
+</ul> -->
+
+
+
+<!-- Displaying it in cards  -->
+ <!-- <div class="container">
+<div class="card bg-light mb-3" style="max-width: 540px;"  *ngFor="let course of category">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="" class="card-img" alt="Need to add">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{course.courseName}}</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">{{course.duration}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>  -->
+
+
+
+  <!-- Cards new approch -->
+
+  <div class="container">
+
+    <div class="card my-4 bg-light  " *ngFor="let course of category">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="https://media.istockphoto.com/vectors/photo-coming-soon-image-icon-vector-illustration-isolated-on-white-vector-id1193046540?k=20&m=1193046540&s=612x612&w=0&h=HQfBJLo1S0CJEsD4uk7m3EkR99gkICDdf0I52uAlk-8=" alt="Image Need to be uploaded"
+                    class="card-img h-100" />
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{course.courseName}}</h5>
+                    <p class="card-text">
+                        <span class="badge badge-pill badge-success">{{course.category}}</span>
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted"><b>{{course.instructor}}</b></small>
+                    </p>
+                    <p class="card-text">
+                        {{course.overview}}
+                    </p>
+                    <!-- <div class="mt-5"> -->
+                        <p class="card-text">
+                            <small class="text-muted"> <i class="fa fa-clock-o mr-1"></i>{{course.duration}}</small>
+                        </p>
+                    <!-- </div> -->
+                    
+                    <button class="btn btn-outline-info">
+                        <i class="fa-solid fa-cart-shopping"></i> Enroll
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

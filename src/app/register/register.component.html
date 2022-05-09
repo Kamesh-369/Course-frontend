@@ -1,0 +1,128 @@
+<!-- 
+<form class="mx-auto" style="width: 200px;" #regform="ngForm" (ngSubmit)="onSubmit(regform.value)">
+    <div class="form-group">
+    <input class="form-control" type="text" pattern="[a-zA-Z]+$" name="uname" placeholder="Username" ngModel required #name="ngModel">
+    <br>
+    <span class="text-danger" *ngIf="name.invalid && name.touched">Enter a valid input</span>
+    <br>
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="email" name="mail" email placeholder="Email" ngModel required #mail="ngModel">
+    <br>
+    <span class="text-danger" *ngIf="mail.invalid && mail.touched">Enter a valid Email</span>
+    <br>
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="password" name="pwd" placeholder="Password" minlength="6" ngModel required #pwd="ngModel"> -->
+    <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+    </small> -->
+    <!-- <br>
+    <span class="text-danger" *ngIf="pwd.invalid && pwd.touched">Enter a valid Password</span>
+    <br>
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="tel" name="phone" placeholder="Phone No" ngModel required #phone="ngModel">
+    <br>
+    <span class="text-danger" *ngIf="phone.invalid && phone.touched">Enter a valid Phone Number</span>
+    <br>
+    </div>
+    <button [disabled]="regform.invalid" class="btn btn-secondary btn-sm" type="submit" name="submit">Register</button>
+</form> -->
+
+
+
+<!-- Register New Approach -->
+
+
+
+
+<div class="container my-5  ">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card bg-light  ">
+          <div class="card-body">
+            <form #regform="ngForm" (ngSubmit)="onSubmit(regform.value)">
+
+
+              <div class="form-group">
+                <label for="fullname">Full Name</label>
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="uname">
+                      <i class="fa-solid fa-user"></i>
+                    </span>
+                  </div>
+                <input class="form-control" type="text" id="uname" pattern="[a-zA-Z]+$" name="uname" placeholder="Username" ngModel required #name="ngModel">                
+                <!-- <span class="text-danger" *ngIf="name.invalid && name.touched">Enter a valid input</span> -->
+              </div>
+              </div>
+
+
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="mobile">Mobile no.</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="uname">
+                          <i class="fa-solid fa-phone"></i>
+                        </span>
+                      </div>
+                    <input class="form-control"  type="tel" name="phone" placeholder="Phone No" ngModel required #phone="ngModel">
+                    </div>
+                    <small id="phoneHelp" class="form-text text-muted">
+                      We won't share your number with anyone else.
+                    </small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="uname">
+                          <i class="fa-solid fa-at"></i>
+                        </span>
+                      </div>
+                    <input class="form-control" placeholder="you@awesome.com" type="email" name="mail" email placeholder="Email" ngModel required #mail="ngModel" aria-describedby="emailHelp">
+                    </div>
+                    <small id="emailHelp" class="form-text text-muted">
+                      We'll never share your email with anyone else.
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="uname">
+                          <i class="fa-solid fa-lock"></i>
+                        </span>
+                      </div>
+                    <input class="form-control" type="password" name="pwd" placeholder="Password" minlength="6" ngModel required #pwd="ngModel">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-center">
+                <button type="reset" class="btn btn-outline-dark mr-1">
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                    Reset</button>
+
+                <button class="btn btn-outline-dark">
+                  <i class="fa fa-external-link mr-1"></i>
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

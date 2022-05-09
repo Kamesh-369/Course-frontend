@@ -1,0 +1,77 @@
+<!---->
+
+<!-- <form class="mx-auto"  #loginform="ngForm" (ngSubmit)="onSubmit(loginform.value)">
+    <div class="form-group">
+    <input class="form-control" type="email" name="mail" email placeholder="Email" ngModel #mail="ngModel">
+    <br>
+    <span class="text-danger" *ngIf="mail.invalid && mail.touched">Enter a valid Email</span>
+    <br>
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="password" name="pwd" placeholder="Password" minlength="6" ngModel  #pwd="ngModel"> -->
+    <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+    </small> -->
+    <!-- <br>
+    <span class="text-danger" *ngIf="pwd.invalid && pwd.touched">Enter a valid Password</span>
+    <br>
+    </div>
+    <button class="btn btn-secondary btn-sm" type="submit" name="submit">Register</button>
+</form>     -->
+
+
+
+<!-- New Approach -->
+
+
+<div class="container my-5">
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+        <div class="card bg-light">
+          <div class="card-body">
+            <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform.value)">
+              <div class="form-group">
+                <label for="email">Email</label>
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="email">
+                      <i class="fa fa-envelope-o"></i>
+                    </span>
+                  </div>
+                  <input type="email" name="mail" id="email" class="form-control" placeholder="you@awesome.com" aria-describedby="email" required  ngModel #mail="ngModel"/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa fa-key"></i>
+                    </span>
+                  </div>
+                  <input type="password" name="pwd" class="form-control" minlength="6"  placeholder="Password" ngModel  #pwd="ngModel" />
+                
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-outline-dark btn-block"  type="submit" name="submit">
+                  <i class="fa-solid fa-right-to-bracket mr-1"></i>
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="pt-3 text-center">
+          <small class="">
+            Don't have an account?
+            <a routerLink="/register">Register now</a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
