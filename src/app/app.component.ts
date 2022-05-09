@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { VerifyService } from './services/verify.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-frontend';
+
+  constructor(private verifyService: VerifyService) { }
 }

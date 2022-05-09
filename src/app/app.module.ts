@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UseCaseFourComponent } from './use-case-four/use-case-four.component';
 import { AuthGuard } from './authGuard/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { VerifyService } from './services/verify.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthGuard,
+  providers: [AuthGuard,VerifyService,
   {
     provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true
   }],
