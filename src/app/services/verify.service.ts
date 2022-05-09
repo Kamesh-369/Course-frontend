@@ -41,6 +41,11 @@ export class VerifyService {
   }
 
 
+  getToken(){
+    return localStorage.getItem('token')
+  }
+
+
 }
 
 
