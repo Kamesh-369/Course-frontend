@@ -15,4 +15,10 @@ export class CategoriesService {
     return this.http.get(`http://localhost:3000/api/user/view/${cour}`);
 
   }
+
+  getCourse(cour:any,cours:any){
+    console.log("Now in use case 4");
+    
+    return this.http.get(`http://localhost:3000/api/user/view/${cour}/${cours}`)
+  }
 }

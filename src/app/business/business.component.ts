@@ -16,9 +16,6 @@ export class BusinessComponent implements OnInit {
   constructor(private _categoryservice:CategoriesService,
     private route: ActivatedRoute, private router:Router) 
     {
-      //  console.log("hello");
-      // let course = this.route.snapshot.paramMap.get('category');
-      // console.log("object"); 
       this.route.params.subscribe(value => {
         this.url=value["category"]
         this._categoryservice
