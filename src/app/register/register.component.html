@@ -55,8 +55,9 @@
                     </span>
                   </div>
                 <input class="form-control" type="text" id="uname" pattern="[a-zA-Z]+$" name="uname" placeholder="Username" ngModel required #name="ngModel">                
-                <!-- <span class="text-danger" *ngIf="name.invalid && name.touched">Enter a valid input</span> -->
               </div>
+              <div>
+                <span class="text-danger" *ngIf="name.invalid && name.touched">Enter a valid Name</span> </div>
               </div>
 
 
@@ -71,11 +72,13 @@
                           <i class="fa-solid fa-phone"></i>
                         </span>
                       </div>
-                    <input class="form-control"  type="tel" name="phone" placeholder="Phone No" ngModel required #phone="ngModel">
+                    <input class="form-control"  type="tel" name="phone" pattern="[0-9]+" placeholder="Phone No" minlength="10" ngModel required #phone="ngModel">
                     </div>
                     <small id="phoneHelp" class="form-text text-muted">
                       We won't share your number with anyone else.
                     </small>
+                    <div>
+                      <span class="text-danger" *ngIf="phone.invalid && phone.touched">Enter a valid Phone Number</span> </div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -87,11 +90,13 @@
                           <i class="fa-solid fa-at"></i>
                         </span>
                       </div>
-                    <input class="form-control" placeholder="you@awesome.com" type="email" name="mail" email placeholder="Email" ngModel required #mail="ngModel" aria-describedby="emailHelp">
+                    <input class="form-control" placeholder="you@awesome.com" type="email" name="mail" email placeholder="Email" ngModel email required #mail="ngModel" aria-describedby="emailHelp">
                     </div>
                     <small id="emailHelp" class="form-text text-muted">
                       We'll never share your email with anyone else.
                     </small>
+                    <div>
+                      <span class="text-danger" *ngIf="mail.invalid && mail.touched">Enter a valid Mail Address</span> </div>
                   </div>
                 </div>
               </div>
@@ -107,6 +112,8 @@
                       </div>
                     <input class="form-control" type="password" name="pwd" placeholder="Password" minlength="6" ngModel required #pwd="ngModel">
                     </div>
+                    <div>
+                      <span class="text-danger" *ngIf="pwd.invalid && pwd.touched">Enter a valid Password</span> </div>
                   </div>
                 </div>
               </div>
