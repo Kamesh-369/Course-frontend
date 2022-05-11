@@ -15,6 +15,7 @@ import { UseCaseFourComponent } from './use-case-four/use-case-four.component';
 import { AuthGuard } from './authGuard/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { VerifyService } from './services/verify.service';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { VerifyService } from './services/verify.service';
     SecondUsecaseComponent,
     BusinessComponent,
     TopCategoriesComponent,
-    UseCaseFourComponent
+    UseCaseFourComponent,
+    AdminComponent
 
   ],
   imports: [
