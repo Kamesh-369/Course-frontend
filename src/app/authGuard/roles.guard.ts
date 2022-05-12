@@ -13,7 +13,7 @@ export class RolesGuard implements CanActivate {
       
       
       const Role = localStorage. getItem("token");
-      const token= JSON.parse(atob(Role!.split('.')[1]))
+     // const token= JSON.parse(atob(Role!.split('.')[1]))
 
       let jwtData = Role!.split('.')[1]
       let decodedJwtJsonData = atob(jwtData)

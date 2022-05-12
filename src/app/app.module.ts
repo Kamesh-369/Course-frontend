@@ -16,6 +16,7 @@ import { AuthGuard } from './authGuard/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { VerifyService } from './services/verify.service';
 import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { AdminComponent } from './admin/admin.component';
     BusinessComponent,
     TopCategoriesComponent,
     UseCaseFourComponent,
-    AdminComponent
+    AdminComponent,
+    HomeComponent
 
   ],
   imports: [

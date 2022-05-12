@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Brand Logo</a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="navbar-brand" routerLink="">Brand Logo</a>
+    <ul class="navbar-nav mr-auto " *ngIf="verifyService.loggedIn() && !verifyService.isAdmin()">
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -27,8 +27,13 @@
           <a class="nav-link" routerLink="/register" *ngIf="!verifyService.loggedIn()">Register</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" *ngIf="verifyService.loggedIn() && verifyService.isAdmin()">Add Course</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" *ngIf="verifyService.loggedIn()" (click)="verifyService.logoutUser()">Logout</a>
         </li>
+        
+        
         
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
