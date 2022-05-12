@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(value: any){
     this.userService
-      .registerUser(value.uname, value.mail, value.pwd, value.phone)
+      .registerUser(value.uname, value.mail, value.pwd, value.phone,value.role)
       .subscribe({
         next: (data) => {
           console.log(data.msg);

@@ -20,12 +20,13 @@ export class VerifyService {
   }
 
 
-  registerUser(username: string,email: string,password: string,phonenumber: string): Observable<any> {
+  registerUser(username: string,email: string,password: string,phonenumber: string,userType:string): Observable<any> {
     return this.http.post('http://localhost:3000/api/user/register', {
       username,
       email,
       password,
       phonenumber,
+      userType
     });
   }
 
