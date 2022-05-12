@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './authGuard/auth.guard';
 import { RolesGuard } from './authGuard/roles.guard';
@@ -18,7 +19,8 @@ const routes: Routes = [
   canActivate:[AuthGuard] 
 },
   {path: ':category/:course', component:UseCaseFourComponent, canActivate:[AuthGuard] },  
-  {path: 'admin', component:AdminComponent, canActivate:[AuthGuard,RolesGuard] }
+  {path: 'admin', component:AdminComponent, canActivate:[AuthGuard,RolesGuard] },
+  {path: 'adminCourse', component:AdminCourseviewComponent, canActivate:[AuthGuard,RolesGuard] }
   
 ];
 

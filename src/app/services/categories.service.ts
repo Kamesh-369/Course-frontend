@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,9 @@ export class CategoriesService {
     console.log("Now in use case 4");
     
     return this.http.get(`http://localhost:3000/api/user/view/${cour}/${cours}`)
+  }
+
+  adminCourse(){
+    return this.http.get('http://localhost:3000/admin/view')
   }
 }

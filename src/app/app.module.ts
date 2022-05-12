@@ -17,6 +17,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { VerifyService } from './services/verify.service';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     TopCategoriesComponent,
     UseCaseFourComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    AdminCourseviewComponent
 
   ],
   imports: [
