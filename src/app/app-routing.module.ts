@@ -10,9 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UseCaseFourComponent } from './use-case-four/use-case-four.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  //{path:'/home', component:HomeComponent},
+  {path:'', component:WelcomeComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent  },
   {path:'course/:category', component:BusinessComponent, 

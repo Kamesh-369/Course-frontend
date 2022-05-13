@@ -18,6 +18,7 @@ import { VerifyService } from './services/verify.service';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.co
     UseCaseFourComponent,
     AdminComponent,
     HomeComponent,
-    AdminCourseviewComponent
+    AdminCourseviewComponent,
+    WelcomeComponent
 
   ],
   imports: [

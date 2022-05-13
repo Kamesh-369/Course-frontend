@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VerifyService } from '../services/verify.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { VerifyService } from '../services/verify.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(  private userService: VerifyService  ) { }
+  constructor(  private userService: VerifyService, private router:Router  ) { }
 
   loginUser(item: any) {
     console.warn(item);
@@ -19,13 +20,15 @@ export class LoginComponent implements OnInit {
     const email=value.mail;
     console.log(email);
 
-    this.userService.loginUser(value.mail,value.pwd).subscribe({
+    this.userService.loginUser(value.mail,value.pwd).
+    subscribe({
       next: (result: any) => {
         console.log(result);
         this.userService.storeUserData(result.token);
         localStorage.setItem('token',result.token);
       }
-  });
+  })
+  this.router.navigate(['']);;
  
   
 
