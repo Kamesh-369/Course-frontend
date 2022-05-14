@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr.css";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&family=Ubuntu:wght@300&display=swap');
+h1{
+    font-family: 'Poppins', sans-serif;
+}

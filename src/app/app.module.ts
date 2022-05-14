@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,6 +19,7 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: 'toast-top-right',
+
+      preventDuplicates: true,
+      closeButton: true,
+    }),
   ],
   providers: [AuthGuard,VerifyService,
   {

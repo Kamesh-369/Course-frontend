@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { VerifyService } from '../services/verify.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { VerifyService } from '../services/verify.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(  private userService: VerifyService, private router:Router  ) { }
+  constructor(  private userService: VerifyService, private router:Router , private toastr: ToastrService ) { }
 
   loginUser(item: any) {
     console.warn(item);
@@ -26,9 +27,17 @@ export class LoginComponent implements OnInit {
         console.log(result);
         this.userService.storeUserData(result.token);
         localStorage.setItem('token',result.token);
-      }
+      },
+      error: (error:any) => {
+        console.log(error);
+        this.toastr.error('Enrolled Successfuly', '', {
+          timeOut: 2000,
+          progressBar: true,
+          progressAnimation: 'decreasing',
+        }
+    )}
   })
-  this.router.navigate(['']);;
+  //this.router.navigate(['']);;
  
   
 

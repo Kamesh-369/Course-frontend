@@ -26,4 +26,8 @@ export class CategoriesService {
   adminCourse(){
     return this.http.get('http://localhost:3000/admin/view')
   }
+
+  enrollCourse(email:any,course:any){
+    return this.http.post('http://localhost:3000/api/user/view/enroll',{email:email,courseName:course})
+  }
 }

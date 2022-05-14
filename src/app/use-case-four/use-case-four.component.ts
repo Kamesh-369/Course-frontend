@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CategoriesService } from '../services/categories.service';
 import { Router }from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-use-case-four',
@@ -16,7 +17,8 @@ export class UseCaseFourComponent implements OnInit {
   securl:any;
 
   constructor(private _categoryservice:CategoriesService,
-    private route: ActivatedRoute, private router:Router) 
+    private route: ActivatedRoute, private router:Router,
+    private toastr: ToastrService) 
     {
       this.route.params.subscribe(value => {
         this.url=value["category"]
@@ -33,6 +35,26 @@ export class UseCaseFourComponent implements OnInit {
         } )
        
     ) }
+
+    enrollCourse(){
+
+      const Role = localStorage. getItem("token");
+      let jwtData = Role!.split('.')[1]
+      let decodedJwtJsonData = atob(jwtData)
+      let decodedJwtData = JSON.parse(decodedJwtJsonData)
+      let email  = decodedJwtData.email;
+      console.log(email , this.securl);
+
+      this._categoryservice.enrollCourse(email,this.securl)
+      .subscribe((result:any)=>{console.log(result)
+        this.toastr.success('Enrolled Successfuly', '', {
+          timeOut: 2000,
+          progressBar: true,
+          progressAnimation: 'decreasing',
+        });
+      });
+      
+    }
   
 
   ngOnInit(): void { }
