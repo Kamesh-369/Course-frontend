@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { ToastrModule } from 'ngx-toastr';
     AdminComponent,
     HomeComponent,
     AdminCourseviewComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ProfileComponent
 
   ],
   imports: [

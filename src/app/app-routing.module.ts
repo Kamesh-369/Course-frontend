@@ -8,6 +8,7 @@ import { BusinessComponent } from './business/business.component';
 import { HomeComponent } from './home/home.component';
 // import { DevelopmentComponent } from './development/development.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { UseCaseFourComponent } from './use-case-four/use-case-four.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   canActivate:[AuthGuard] 
 },
   {path: ':category/:course', component:UseCaseFourComponent, canActivate:[AuthGuard] },  
+  {path: 'profile', component:ProfileComponent, canActivate:[AuthGuard] },
   {path: 'admin', component:AdminComponent, canActivate:[AuthGuard,RolesGuard] },
   {path: 'adminCourse', component:AdminCourseviewComponent, canActivate:[AuthGuard,RolesGuard] }
   

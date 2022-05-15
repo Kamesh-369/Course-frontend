@@ -1,4 +1,4 @@
-Use case four works!!!!!!!!!!!!!!!!!!!!!!
+
 
 
 
@@ -21,10 +21,10 @@ Use case four works!!!!!!!!!!!!!!!!!!!!!!
 
 <!-- New Approach Use Case 4 -->
 
-<div class="card my-4 bg-light" *ngFor="let course of category">
-<div class="container">
+<!-- <div class="card my-4 bg-light" *ngFor="let course of category">
+<div class="container"> -->
     <!-- <div> hello</div> -->
-    <div class="row justify-content-between ">
+    <!-- <div class="row justify-content-between ">
         <div class="bg-info">
             <div class="container mb-5">
                 <div class="card" style="width: 18rem;">
@@ -53,5 +53,40 @@ Use case four works!!!!!!!!!!!!!!!!!!!!!!
             </div>
         </div>
     </div>
+</div> -->
+
+
+<div class="" style="background-color: #1C1D1F;" *ngFor="let course of category">
+    <div class="container text-light py-5">
+        <h1 class="w-50">{{course.courseName}}</h1>
+        <p class="text-muted h3">{{course.instructor}}</p>
+        <!-- <p class="m-0 w-50">Overview of the course goes here.Overview of the course goes here.Overview of the course goes here.Overview of the course goes here</p> -->
+    </div>
+</div>
+<div class="container mt-3" *ngFor="let course of category">
+<div class="row justify-content-between ">
+    <div class="col-4 border">
+        <p class="font-weight-bold">What you'll learn</p>
+        <p class="font-weight-light">{{course.overview}}</p>
+    </div>
+    <div class="col-4">
+        <div class="card" style="width: 18rem; position: absolute; top: -150px;" >
+            <img src="https://media.istockphoto.com/vectors/photo-coming-soon-image-icon-vector-illustration-isolated-on-white-vector-id1193046540?k=20&m=1193046540&s=612x612&w=0&h=HQfBJLo1S0CJEsD4uk7m3EkR99gkICDdf0I52uAlk-8="
+                alt="Image goes here" class="card-img-top img-fluid">
+            <div class="card-body">
+                <h5 class="card-title">{{course.courseName}}</h5>
+                <p class="card-text">
+                    <small class="text-muted"><b>{{course.instructor}}</b></small>
+                </p>
+                <p class="card-text m-0">{{course.instructorDetails}}</p>
+                <span class="mb-3">
+                    <small class="text-muted"> <i class="fa fa-clock-o mr-1"></i>{{course.duration}}</small>                    
+                </span>
+                <button class="btn btn-outline-info btn-block" (click) = "enrollCourse()"><i class="fa-solid fa-cart-shopping ml-2"></i>Enroll Now</button>
+            </div>
+        </div>
+    </div>
+
+</div>
 </div>
 

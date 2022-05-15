@@ -30,14 +30,14 @@ export class LoginComponent implements OnInit {
       },
       error: (error:any) => {
         console.log(error);
-        this.toastr.error('Enrolled Successfuly', '', {
+        this.toastr.error('Login Failure', '', {
           timeOut: 2000,
           progressBar: true,
           progressAnimation: 'decreasing',
         }
     )}
   })
-  //this.router.navigate(['']);;
+  //this.router.navigate(['']);
  
   
 
