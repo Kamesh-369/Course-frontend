@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesService } from '../services/categories.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  category:any=[];
+
+  constructor(private _categoryservice:CategoriesService) { }
+
+
+  profileView(){
+    const Role = localStorage. getItem("token");
+    let jwtData = Role!.split('.')[1]
+    let decodedJwtJsonData = atob(jwtData)
+    let decodedJwtData = JSON.parse(decodedJwtJsonData)
+    let email  = decodedJwtData.email;
+    console.log(email);
+
+
+    this._categoryservice.viewProfile(email)
+    .subscribe((result:any)=>{this.category=result}
+      
+      )};
 
   ngOnInit(): void {
   }

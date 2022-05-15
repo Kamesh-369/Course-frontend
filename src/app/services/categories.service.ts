@@ -30,4 +30,8 @@ export class CategoriesService {
   enrollCourse(email:any,course:any){
     return this.http.post('http://localhost:3000/api/user/view/enroll',{email:email,courseName:course})
   }
+
+  viewProfile(email:any){
+    return this.http.get('http://localhost:3000/api/user/profile')
+  }
 }
