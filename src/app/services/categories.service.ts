@@ -32,6 +32,6 @@ export class CategoriesService {
   }
 
   viewProfile(email:any){
-    return this.http.get('http://localhost:3000/api/user/profile')
+    return this.http.get(`http://localhost:3000/api/user/profile/${email}`);
   }
 }

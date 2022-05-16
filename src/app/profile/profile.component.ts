@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CategoriesService } from '../services/categories.service';
 
 @Component({
@@ -10,10 +11,10 @@ export class ProfileComponent implements OnInit {
 
   category:any=[];
 
-  constructor(private _categoryservice:CategoriesService) { }
+  constructor(private _categoryservice:CategoriesService,private route: ActivatedRoute,) { 
 
 
-  profileView(){
+  //profileView(){
     const Role = localStorage. getItem("token");
     let jwtData = Role!.split('.')[1]
     let decodedJwtJsonData = atob(jwtData)
@@ -25,7 +26,9 @@ export class ProfileComponent implements OnInit {
     this._categoryservice.viewProfile(email)
     .subscribe((result:any)=>{this.category=result}
       
-      )};
+      )
+    //};
+  }
 
   ngOnInit(): void {
   }
