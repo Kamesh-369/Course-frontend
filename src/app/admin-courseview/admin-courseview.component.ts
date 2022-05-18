@@ -11,6 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AdminCourseviewComponent implements OnInit {
 
+  securl:any ;
   public courses:any = [];
   constructor(private _categoryservice:CategoriesService,
     private route: ActivatedRoute, private router:Router) {  }
@@ -20,5 +21,15 @@ export class AdminCourseviewComponent implements OnInit {
     this._categoryservice.adminCourse()
         .subscribe(data => this.courses = data)
   }
+
+
+  courseDelete(courseName:any){
+    console.log(courseName);
+    this._categoryservice.deleteCourse(courseName).subscribe((result:any)=>{console.log(result);},
+   ); 
+      
+    
+  }
+
 
 }

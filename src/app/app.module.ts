@@ -21,6 +21,7 @@ import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.co
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ProfileComponent } from './profile/profile.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     AdminCourseviewComponent,
     WelcomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditCourseComponent
 
   ],
   imports: [

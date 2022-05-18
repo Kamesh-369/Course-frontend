@@ -34,4 +34,19 @@ export class CategoriesService {
   viewProfile(email:any){
     return this.http.get(`http://localhost:3000/api/user/profile/${email}`);
   }
+
+  deleteCourse(courseName:any){
+    return this.http.delete(`http://localhost:3000/admin/view/${courseName}`)
+  }
+
+  updateCourse(category:string,courseName:string,duration:string,instructor:string,instructorDetails:string,overview:string,id:any){
+    return this.http.put(`http://localhost:3000/admin/view/${id}`,{
+       category,
+       courseName,
+       duration,
+       instructor,
+       instructorDetails,
+       overview
+    })
+  }
 }

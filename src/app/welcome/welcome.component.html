@@ -2,8 +2,9 @@
     <div class="container">
         <h1 class="display-4"><strong>Learn Without <br> Limits </strong></h1>
         <p class="top">Open your door to more with world-class Professional<br> Certificates and degrees</p>
-        <button class="btn btn-lg btn-outline-info mt-3" routerLink="/login">Log in</button>
-        <button class="btn btn-lg btn btn-info mt-3 ml-2" routerLink="/register">Register</button>
+        <button class="btn btn-lg btn-outline-info mt-3" routerLink="/login" *ngIf="!verifyService.loggedIn()">Log in</button>
+        <button class="btn btn-lg btn btn-info mt-3 ml-2" routerLink="/register" *ngIf="!verifyService.loggedIn()">Register</button>
+        <button class="btn btn-lg btn btn-info mt-3 ml-2" routerLink="/" *ngIf="verifyService.loggedIn()">Explore Courses</button>
     </div>
 </div>
 

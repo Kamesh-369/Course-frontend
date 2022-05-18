@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './authGuard/auth.guard';
 import { RolesGuard } from './authGuard/roles.guard';
 import { BusinessComponent } from './business/business.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 import { HomeComponent } from './home/home.component';
 // import { DevelopmentComponent } from './development/development.component';
 import { LoginComponent } from './login/login.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: ':category/:course', component:UseCaseFourComponent, canActivate:[AuthGuard] },  
   {path: 'profile', component:ProfileComponent, canActivate:[AuthGuard] },
   {path: 'admin', component:AdminComponent, canActivate:[AuthGuard,RolesGuard] },
-  {path: 'adminCourse', component:AdminCourseviewComponent, canActivate:[AuthGuard,RolesGuard] }
+  {path: 'adminCourse', component:AdminCourseviewComponent, canActivate:[AuthGuard,RolesGuard] },
+  {path: 'adminCourse/editcourse/:id', component:EditCourseComponent,canActivate:[AuthGuard,RolesGuard] }
   
 ];
 

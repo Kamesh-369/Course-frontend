@@ -49,6 +49,7 @@ export class VerifyService {
   }
 
   loggedIn(){
+    
     return !!localStorage.getItem('token');
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VerifyService } from '../services/verify.service';
 
 @Component({
   selector: 'app-welcome',
@@ -10,7 +11,7 @@ export class WelcomeComponent implements OnInit {
   category:any=[];
   
 
-  constructor() { }
+  constructor(public verifyService: VerifyService) { }
 
 
   
