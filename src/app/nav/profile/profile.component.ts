@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CategoriesService } from '../services/categories.service';
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-profile',

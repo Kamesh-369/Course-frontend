@@ -35,7 +35,7 @@
           <a class="nav-link" routerLink="/adminCourse" *ngIf="verifyService.loggedIn() && verifyService.isAdmin()">Courses</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/profile" *ngIf="verifyService.loggedIn() && !verifyService.isAdmin()">Profile</a>
+          <a class="nav-link" routerLink="/nav" *ngIf="verifyService.loggedIn() && !verifyService.isAdmin()">Profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="verifyService.loggedIn()" (click)="verifyService.logoutUser()">Logout</a>

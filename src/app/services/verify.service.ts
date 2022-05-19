@@ -41,8 +41,9 @@ export class VerifyService {
      })
    }  
 
-  storeUserData(token: string,) {
-    localStorage.setItem('token', token);
+  storeUserData(token: string, ref_token:string) {
+    localStorage.setItem('token', token );
+    localStorage.setItem('ref_token', ref_token);
     //localStorage.setItem('user', name);
     this.authToken = token;
     //this.user = name;
@@ -76,7 +77,24 @@ export class VerifyService {
       }
   }
 
-  
+  userRole(){
+    const Role = localStorage. getItem("token");
+      let jwtData = Role!.split('.')[1]
+      let decodedJwtJsonData = atob(jwtData)
+      let decodedJwtData = JSON.parse(decodedJwtJsonData)
+      let email  = decodedJwtData.email;
+      return email;
+  }
+
+  userMail(){
+    const Role = localStorage. getItem("token");
+    let jwtData = Role!.split('.')[1]
+    let decodedJwtJsonData = atob(jwtData)
+    let decodedJwtData = JSON.parse(decodedJwtJsonData)
+    let isAdmin  = decodedJwtData.userType
+    return isAdmin;
+
+  }
 
 
   getToken(){
@@ -85,10 +103,29 @@ export class VerifyService {
 
   logoutUser(){
     localStorage.removeItem('token')
+    localStorage.removeItem('ref_token')
+    localStorage.removeItem('jwt_token')
 
     this.router.navigate([''])
   }
 
+  getRefreshToken() {
+    return localStorage.getItem('ref_token');
+  }
+
+  refreshToken() {
+    console.log("refreshtokenbody");
+    return this.http.post('http://localhost:3000/api/user/token', {
+      mail:this.userMail(),
+      role:this.userRole(),
+      refreshToken: this.getRefreshToken(),
+    });
+  }
+
+
+  getAccessToken() {
+    return localStorage.getItem('token');
+  } 
 
 }
 

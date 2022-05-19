@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminCourseviewComponent } from './admin-courseview/admin-courseview.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ToastrModule } from 'ngx-toastr';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './nav/profile/profile.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 @NgModule({
   declarations: [
