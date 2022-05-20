@@ -13,11 +13,12 @@ export class TokenInterceptorService implements HttpInterceptor {
   constructor(private authService: VerifyService) {}
 
   intercept(request: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
+   // let authService = this.injector.get(VerifyService);
     request = this.addToken(request, this.authService.getToken());
     console.log('Intercept', request);
     return next.handle(request).pipe(
       catchError((error) => {
-        if (error instanceof HttpErrorResponse ) {
+        if (error instanceof HttpErrorResponse || error.status === 0) {
           return this.handleError(request, next);
         } else {
           console.log("object");
@@ -32,11 +33,15 @@ export class TokenInterceptorService implements HttpInterceptor {
   );
 
   private handleError(request: HttpRequest<any>, next: HttpHandler) {
+    
     if (!this.refresh) {
       this.refresh = true;
+      this.refreshTokenSubject.next(null);
       console.log("Handling Error ---2");
       return this.authService.refreshToken().pipe(
         switchMap((newTokens: any) => {
+          this.refresh = false;
+          this.refreshTokenSubject.next(newTokens.accessToken);
           console.log('tokenswer', newTokens);
           localStorage.setItem('token', newTokens.accessToken);
           return next.handle(
@@ -45,7 +50,6 @@ export class TokenInterceptorService implements HttpInterceptor {
         })
       );
     } else {
-      console.log("Getting into jwt");
       return this.refreshTokenSubject.pipe(
         filter((token) => token != null),
         take(1),
@@ -57,8 +61,8 @@ export class TokenInterceptorService implements HttpInterceptor {
     }
   }
 
-  private addToken(req: HttpRequest<any>, token: any) {
-    return req.clone({
+  private addToken(request: HttpRequest<any>, token: any) {
+    return request.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`,
       },

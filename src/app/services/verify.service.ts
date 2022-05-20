@@ -113,11 +113,11 @@ export class VerifyService {
     return localStorage.getItem('ref_token');
   }
 
-  refreshToken() {
+  refreshToken() : Observable<any>{
     console.log("refreshtokenbody");
     return this.http.post('http://localhost:3000/api/user/token', {
-      mail:this.userMail(),
-      role:this.userRole(),
+      mail:this.userRole(),
+      role:this.userMail(),
       refreshToken: this.getRefreshToken(),
     });
   }
