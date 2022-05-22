@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CategoriesService } from '../services/categories.service';
 import { Router }from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-admin-courseview',
@@ -14,7 +15,7 @@ export class AdminCourseviewComponent implements OnInit {
   securl:any ;
   public courses:any = [];
   constructor(private _categoryservice:CategoriesService,
-    private route: ActivatedRoute, private router:Router) {  }
+    private route: ActivatedRoute, private router:Router, private toastr: ToastrService) {  }
 
   ngOnInit(): void {
 
@@ -27,6 +28,13 @@ export class AdminCourseviewComponent implements OnInit {
     console.log(courseName);
     this._categoryservice.deleteCourse(courseName).subscribe((result:any)=>{console.log(result);},
    ); 
+
+   this.toastr.warning('Course Deleted', '', {
+    timeOut: 2000,
+    progressBar: true,
+    progressAnimation: 'decreasing',
+  }
+)
       
     
   }

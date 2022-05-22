@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
 })
 export class VerifyService {
   
+  base_url='http://13.235.86.14:3000'
   authToken: any;
   user: any;
   constructor(private http: HttpClient, private router: Router) { }
 
   loginUser(email: string, password: string): Observable<any> {
-    return this.http.post('http://localhost:3000/api/user/login', {
+    console.log(this.base_url);
+    return this.http.post(this.base_url+'/api/user/login', {
       email,
       password,
     });
@@ -21,7 +23,7 @@ export class VerifyService {
 
 
   registerUser(username: string,email: string,password: string,phonenumber: string,userType:string): Observable<any> {
-    return this.http.post('http://localhost:3000/api/user/register', {
+    return this.http.post(this.base_url+'/api/user/register', {
       username,
       email,
       password,
@@ -31,7 +33,7 @@ export class VerifyService {
   }
 
   courseUpload(category:string,courseName:string,duration:string,instructor:string,instructorDetails:string,overview:string): Observable<any>{
-     return this.http.post('http://localhost:3000/admin/courseupdate', {
+     return this.http.post(this.base_url+'/admin/courseupdate', {
        category,
        courseName,
        duration,
@@ -115,7 +117,7 @@ export class VerifyService {
 
   refreshToken() : Observable<any>{
     console.log("refreshtokenbody");
-    return this.http.post('http://localhost:3000/api/user/token', {
+    return this.http.post(this.base_url+'/api/user/token', {
       mail:this.userRole(),
       role:this.userMail(),
       refreshToken: this.getRefreshToken(),

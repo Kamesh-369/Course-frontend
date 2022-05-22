@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CategoriesService } from '../services/categories.service';
 import { VerifyService } from '../services/verify.service';
 
@@ -11,7 +12,7 @@ import { VerifyService } from '../services/verify.service';
 export class EditCourseComponent implements OnInit {
 
   url!:any;
-  constructor(private userService: CategoriesService, private router:Router,private route: ActivatedRoute) { }
+  constructor(private userService: CategoriesService, private router:Router,private route: ActivatedRoute,private toastr: ToastrService ) { }
 
 
   onSubmit(value: any){
@@ -22,10 +23,18 @@ export class EditCourseComponent implements OnInit {
       .subscribe({
         next: (data) => {
           console.log(data);
-          alert("Updated");
+          //alert("Updated");
 
   }}
-      )})
+      
+  )
+})
+this.toastr.warning('Course Edited', '', {
+  timeOut: 2000,
+  progressBar: true,
+  progressAnimation: 'decreasing',
+}
+)
 
 
   

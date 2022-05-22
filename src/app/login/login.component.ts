@@ -28,6 +28,14 @@ export class LoginComponent implements OnInit {
         this.userService.storeUserData(result.token,result.ref_token);
         localStorage.setItem('token',result.token);
         localStorage.setItem('ref_token',result.ref_token);
+        this.toastr.success('Login Success', '', {
+          timeOut: 2000,
+          progressBar: true,
+          progressAnimation: 'decreasing',
+        }
+    )
+    this.router.navigate(['']);
+        
       },
       error: (error:any) => {
         console.log(error);

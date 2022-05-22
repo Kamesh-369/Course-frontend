@@ -22,6 +22,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ProfileComponent } from './nav/profile/profile.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
     AdminCourseviewComponent,
     WelcomeComponent,
     ProfileComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    FooterComponent
 
   ],
   imports: [
