@@ -68,7 +68,7 @@ export class VerifyService {
       let decodedJwtData = JSON.parse(decodedJwtJsonData)
       let isAdmin  = decodedJwtData.userType
 
-      console.log(isAdmin+"Check func");
+     // console.log(isAdmin+"Check func");
       if(isAdmin == "admin"){
         return true;
              

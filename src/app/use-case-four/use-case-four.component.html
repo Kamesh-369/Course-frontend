@@ -63,14 +63,14 @@
         <!-- <p class="m-0 w-50">Overview of the course goes here.Overview of the course goes here.Overview of the course goes here.Overview of the course goes here</p> -->
     </div>
 </div>
-<div class="container mt-3" *ngFor="let course of category">
+<div class="container mt-3 mb-4" *ngFor="let course of category">
 <div class="row justify-content-between ">
-    <div class="col-4 border">
+    <div class="col-12 col-md-4">
         <p class="font-weight-bold">What you'll learn</p>
         <p class="font-weight-light">{{course.overview}}</p>
     </div>
-    <div class="col-4">
-        <div class="card" style="width: 18rem; position: relative; top: -150px;" >
+    <div class="col-12 col-md-4 ">
+        <div class="card m-0"  >
             <img src="https://media.istockphoto.com/vectors/photo-coming-soon-image-icon-vector-illustration-isolated-on-white-vector-id1193046540?k=20&m=1193046540&s=612x612&w=0&h=HQfBJLo1S0CJEsD4uk7m3EkR99gkICDdf0I52uAlk-8="
                 alt="Image goes here" class="card-img-top img-fluid">
             <div class="card-body">
@@ -82,7 +82,8 @@
                 <span class="mb-3">
                     <small class="text-muted"> <i class="fa fa-clock-o mr-1"></i>{{course.duration}}</small>                    
                 </span>
-                <button class="btn btn-outline-info btn-block" (click) = "enrollCourse()"><i class="fa-solid fa-cart-shopping ml-2"></i>Enroll Now</button>
+                <!-- <button class="btn btn-outline-info btn-block" (click) = "enrollCourse()"><i class="fa-solid fa-cart-shopping ml-2"></i>Enroll Now</button> -->
+                <button class="btn btn-outline-info btn-block" (click)="initializePayment(2)"><i class="fa-solid fa-cart-shopping ml-2"></i>Enroll Now</button>
             </div>
         </div>
     </div>

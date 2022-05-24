@@ -4,7 +4,7 @@
         <p class="top">Open your door to more with world-class Professional<br> Certificates and degrees</p>
         <button class="btn btn-lg btn-outline-info mt-3" routerLink="/login" *ngIf="!verifyService.loggedIn()">Log in</button>
         <button class="btn btn-lg btn btn-info mt-3 ml-2" routerLink="/register" *ngIf="!verifyService.loggedIn()">Register</button>
-        <button class="btn btn-lg btn btn-info mt-3 ml-2" routerLink="/" *ngIf="verifyService.loggedIn()">Explore Courses</button>
+        <a class="btn btn-lg btn btn-info mt-3 ml-2" href="#top-cour" *ngIf="verifyService.loggedIn()">Explore Courses</a>
     </div>
 </div>
 
@@ -21,7 +21,7 @@
 </div>
 
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3" id="top-cour">
     <p class="h5 my-3"><strong>Top Categories</strong></p>
     <div class=" container row  mx-auto">
     <div class="col-md">
@@ -65,11 +65,11 @@
 </div>
 </div>
 
- <div class="container row">
-    <div class="col-md d-none d-md-block">
+ <div class="container mx-auto row mb-3">
+    <div class=" container col-md d-none d-md-block">
         <img src="assets/Above-Footer.jpg" alt="Image">
     </div>
-    <div class="col-sm">
+    <div class="container col-sm">
         <p class="h1 font-weight-bold bottom ">Transform your life<br> through education</p>
         <p class="fsize top">Learners around the world are launching new <br>careers, advancing in their fields, and enriching <br> their lives.</p>
         <button class="btn btn-dark">Find out how</button>

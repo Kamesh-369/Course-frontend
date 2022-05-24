@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { VerifyService } from '../services/verify.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
   email!: string;
   phonenumber!: string;
 
-  constructor(private userService: VerifyService,  private router: Router) { }
+  constructor(private userService: VerifyService,  private router: Router, private toastr: ToastrService) { }
 
   registerUser(item: any) {
     console.warn(item);
@@ -26,10 +27,25 @@ export class RegisterComponent implements OnInit {
       .subscribe({
         next: (data) => {
           console.log(data.msg);
+          this.toastr.success('Registration Failure', 'Mail already registered', {
+            timeOut: 2000,
+            progressBar: true,
+            progressAnimation: 'decreasing',
+          }
+      )
+      this.router.navigate(['/login']);
 
-  }
+  },
+  error: (error:any) => {
+    console.log(error);
+    this.toastr.error('Registration Failure', 'Mail already registered', {
+      timeOut: 2000,
+      progressBar: true,
+      progressAnimation: 'decreasing',
+    }
+)}
 })
-this.router.navigate(['/login']);
+//this.router.navigate(['/login']);
 
   
 

@@ -14,7 +14,7 @@ export class CategoriesService {
 
 
   getCategories(cour:any){
-    console.log("hiiiiii");
+    
 
     return this.http.get(this.base_url+`/api/user/view/${cour}`);
 
