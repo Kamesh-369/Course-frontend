@@ -17,7 +17,14 @@
                         <i class="fa-solid fa-clipboard-list"></i>
                       </span>
                     </div>
-                    <input type="text" name="mail" id="email" class="form-control" placeholder="Category"  ngModel #mail="ngModel"/>
+                    <select  name="mail" id="email" class="form-control" placeholder="Category" required  ngModel #mail="ngModel">
+                      <option value="Business">Business</option>
+                      <option value="Design">Design</option>
+                      <option value="IT">IT & Software</option>
+                      <option value="Finance">Finance</option>
+                      <option value="Development">Development</option>
+                      <option value="Productivity">Office Productivity</option>
+                    </select>
                   </div>
                   <div class="text-danger" *ngIf="mail.invalid && mail.touched">
                     Please enter a valid Category.
