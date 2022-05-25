@@ -83,7 +83,7 @@
                     <small class="text-muted"> <i class="fa fa-clock-o mr-1"></i>{{course.duration}}</small>                    
                 </span>
                 <!-- <button class="btn btn-outline-info btn-block" (click) = "enrollCourse()"><i class="fa-solid fa-cart-shopping ml-2"></i>Enroll Now</button> -->
-                <button class="btn btn-outline-info btn-block" (click)="initializePayment(2)"><i class="fa-solid fa-cart-shopping ml-2"></i>Enroll Now</button>
+                <button class="btn btn-outline-info btn-block" (click)="initializePayment(course.price)"><i class="fa-solid fa-cart-shopping ml-2"></i> Enroll Now</button>
             </div>
         </div>
     </div>

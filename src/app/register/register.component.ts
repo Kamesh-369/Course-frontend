@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
       .subscribe({
         next: (data) => {
           console.log(data.msg);
-          this.toastr.success('Registration Failure', 'Mail already registered', {
+          this.toastr.success('Registration Success', 'New User registered', {
             timeOut: 2000,
             progressBar: true,
             progressAnimation: 'decreasing',

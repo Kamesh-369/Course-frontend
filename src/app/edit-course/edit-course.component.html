@@ -112,6 +112,25 @@
                 </div>
 
 
+                <div class="form-group">
+                  <label for="duration">Price</label>
+  
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="price">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                      </span>
+                    </div>
+                    <input type="text" name="price" id="price" class="form-control"  placeholder="Duration" aria-describedby="email" required  ngModel #price="ngModel"/>
+                  </div>
+                  <div class="text-danger" *ngIf="price.invalid && price.touched">
+                    Please enter the price of the course.
+                  </div> 
+              </div>
+
+                
+
+
   
                 <div class="form-group">
                   <button class="btn btn-outline-dark btn-block"  type="submit" name="submit">

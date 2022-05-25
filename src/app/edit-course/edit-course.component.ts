@@ -19,7 +19,7 @@ export class EditCourseComponent implements OnInit {
     this.route.params.subscribe(val => {
       this.url=val["id"]
     this.userService
-      .updateCourse(value.mail, value.pwd, value.durartion,value.iName, value.idetails,value.overview,this.url)
+      .updateCourse(value.mail, value.pwd, value.durartion,value.iName, value.idetails,value.overview,value.price,this.url)
       .subscribe({
         next: (data) => {
           console.log(data);

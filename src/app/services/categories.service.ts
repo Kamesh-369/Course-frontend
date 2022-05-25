@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CategoriesService {
 
-  base_url='http://13.235.86.14:3000'
+    //base_url='http://13.235.86.14:3000'
+   base_url='http://localhost:3000'
 
   constructor(private http:HttpClient) { }
 
@@ -42,14 +43,15 @@ export class CategoriesService {
     return this.http.delete(this.base_url+`/admin/view/${courseName}`)
   }
 
-  updateCourse(category:string,courseName:string,duration:string,instructor:string,instructorDetails:string,overview:string,id:any){
+  updateCourse(category:string,courseName:string,duration:string,instructor:string,instructorDetails:string,overview:string,price:any,id:any){
     return this.http.put(this.base_url+`/admin/view/${id}`,{
        category,
        courseName,
        duration,
        instructor,
        instructorDetails,
-       overview
+       overview,
+       price
     })
   }
 }

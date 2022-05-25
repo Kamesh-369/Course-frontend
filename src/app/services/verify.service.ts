@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class VerifyService {
   
-  base_url='http://13.235.86.14:3000'
+  //base_url='http://13.235.86.14:3000'
+  base_url='http://localhost:3000'
   authToken: any;
   user: any;
   constructor(private http: HttpClient, private router: Router) { }
@@ -32,14 +33,14 @@ export class VerifyService {
     });
   }
 
-  courseUpload(category:string,courseName:string,duration:string,instructor:string,instructorDetails:string,overview:string): Observable<any>{
+  courseUpload(category:string,courseName:string,duration:string,instructor:string,instructorDetails:string,overview:string,price:string): Observable<any>{
      return this.http.post(this.base_url+'/admin/courseupdate', {
        category,
        courseName,
        duration,
        instructor,
        instructorDetails,
-       overview
+       overview,price
      })
    }  
 

@@ -15,7 +15,7 @@ export class AdminComponent implements OnInit {
 
   onSubmit(value: any){
     this.userService
-      .courseUpload(value.mail, value.pwd, value.durartion,value.iName, value.idetails,value.overview)
+      .courseUpload(value.mail, value.pwd, value.durartion,value.iName, value.idetails,value.overview,value.price)
       .subscribe({
         next: (data) => {
           console.log(data.msg);
