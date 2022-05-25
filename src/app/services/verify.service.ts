@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class VerifyService {
   
-  //base_url='http://13.235.86.14:3000'
+ // base_url='http://13.235.86.14:3000'
   base_url='http://localhost:3000'
   authToken: any;
   user: any;
@@ -23,13 +23,12 @@ export class VerifyService {
   }
 
 
-  registerUser(username: string,email: string,password: string,phonenumber: string,userType:string): Observable<any> {
+  registerUser(username: string,email: string,password: string,phonenumber: string): Observable<any> {
     return this.http.post(this.base_url+'/api/user/register', {
       username,
       email,
       password,
-      phonenumber,
-      userType
+      phonenumber      
     });
   }
 

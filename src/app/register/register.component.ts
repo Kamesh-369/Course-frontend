@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(value: any){
     this.userService
-      .registerUser(value.uname, value.mail, value.pwd, value.phone,value.role)
+      .registerUser(value.uname, value.mail, value.pwd, value.phone)
       .subscribe({
         next: (data) => {
           console.log(data.msg);
@@ -38,12 +38,15 @@ export class RegisterComponent implements OnInit {
   },
   error: (error:any) => {
     console.log(error);
+    console.log("error captured");
     this.toastr.error('Registration Failure', 'Mail already registered', {
       timeOut: 2000,
       progressBar: true,
       progressAnimation: 'decreasing',
-    }
-)}
+    },   
+)     
+//window.location.reload();
+}
 })
 //this.router.navigate(['/login']);
 

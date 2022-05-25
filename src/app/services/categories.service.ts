@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoriesService {
 
-    //base_url='http://13.235.86.14:3000'
+   // base_url='http://13.235.86.14:3000'
    base_url='http://localhost:3000'
 
   constructor(private http:HttpClient) { }

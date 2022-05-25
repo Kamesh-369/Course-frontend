@@ -33,8 +33,9 @@ export class AdminCourseviewComponent implements OnInit {
     timeOut: 2000,
     progressBar: true,
     progressAnimation: 'decreasing',
-  }
-)
+  },
+  
+)  
       
     
   }

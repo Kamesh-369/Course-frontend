@@ -1,8 +1,7 @@
-body{
+/* body{
     margin:0;
     overflow-x:hidden;
-    }
-
+    } */
 
 
 
@@ -12,6 +11,7 @@ body{
     padding:30px 0px;
     font-family: 'Play', sans-serif;
     text-align:center;
+    
     }
     
     .footer .row{
@@ -46,7 +46,7 @@ body{
     margin:0% 1%;
     }
     
-    @media (max-width:720px){
+    /* @media (max-width:720px){
     .footer{
     text-align:left;
     padding:5%;
@@ -59,4 +59,4 @@ body{
     .footer .row a i{
     margin:0% 3%;
     }
-    }
+    } */
