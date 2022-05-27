@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class VerifyService {
   
- // base_url='http://13.235.86.14:3000'
-  base_url='http://localhost:3000'
+ base_url='http://13.235.86.14:3000'
+  //base_url='http://localhost:3000'
   authToken: any;
   user: any;
   constructor(private http: HttpClient, private router: Router) { }
